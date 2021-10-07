@@ -2,7 +2,7 @@
   "name": "restaurant_page",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "private": true,
   "scripts": {
     "watch": "webpack --watch",
     "build": "webpack"
@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/devkovmtl/restaurant_page#readme",
   "devDependencies": {
+    "html-webpack-plugin": "^5.3.2",
     "webpack": "^5.57.1",
     "webpack-cli": "^4.9.0"
   }
