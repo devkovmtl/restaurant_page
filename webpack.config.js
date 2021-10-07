@@ -6,6 +6,9 @@ module.exports = {
   mode: NODE_ENV === 'production' ? 'production' : 'development',
   entry: './src/index.js',
   devtool: NODE_ENV === 'production' ? 'none' : 'inline-source-map',
+  devServer: {
+    static: './dist',
+  },
   plugins: [
     new HtmlWebpackPlugin({
       title: 'Restaurant',
