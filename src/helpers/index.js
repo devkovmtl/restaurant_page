@@ -1,4 +1,4 @@
-function createHTMLElement(elementType, id, classes, content) {
+export function createHTMLElement(elementType, id, classes, content) {
   const el = document.createElement(elementType)
   if (id) el.id = id
   if (classes.length) {
@@ -9,5 +9,3 @@ function createHTMLElement(elementType, id, classes, content) {
   if (content) el.innerText = content
   return el
 }
-
-module.exports = { createHTMLElement }

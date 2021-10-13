@@ -1,4 +1,4 @@
-const { createHTMLElement } = require('./helpers')
+import { createHTMLElement } from './helpers'
 
 const content = document.querySelector('div#content')
 const div = createHTMLElement('div', 'leftPane', ['pane', 'left-pane'])
