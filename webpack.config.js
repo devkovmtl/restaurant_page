@@ -2,33 +2,22 @@ const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const { NODE_ENV } = process.env
 
+const IN_PROD = NODE_ENV === 'production'
+
 module.exports = {
-  mode: NODE_ENV === 'production' ? 'production' : 'development',
+  mode: IN_PROD ? 'production' : 'development',
   entry: './src/index.js',
-  devtool: NODE_ENV === 'production' ? 'none' : 'inline-source-map',
-  devServer: {
-    static: './dist',
-  },
   plugins: [
     new HtmlWebpackPlugin({
-      title: 'Restaurant',
+      title: 'My Restaurant',
+      template: './src/index.html',
+      hash: true,
     }),
   ],
   output: {
-    filename: '[name].bundle.js',
     path: path.resolve(__dirname, 'dist'),
+    filename: '[name].bundle.js',
+    assetModuleFilename: 'images/[hash][ext][query]',
     clean: true,
-  },
-  module: {
-    rules: [
-      {
-        test: /\.css$/i,
-        use: ['style-loader', 'css-loader'],
-      },
-      {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
-        type: 'asset/resource',
-      },
-    ],
   },
 }

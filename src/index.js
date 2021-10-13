@@ -1,6 +1,8 @@
-import './style.css'
-const body = document.querySelector('body')
-const divContent = document.createElement('div')
-divContent.setAttribute('id', 'content')
+const { createHTMLElement } = require('./helpers')
 
-body.appendChild(divContent)
+const content = document.querySelector('div#content')
+const div = createHTMLElement('div', 'leftPane', ['pane', 'left-pane'])
+
+content.appendChild(div)
+
+console.log({ one: 1, two: 2 })
