@@ -12,6 +12,7 @@ module.exports = {
   devtool: NODE_ENV === 'production' ? 'source-map' : 'inline-source-map',
   devServer: {
     static: './dist',
+    hot: true,
   },
   plugins: [
     new CleanWebpackPlugin(),
@@ -41,7 +42,7 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader'],
+        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
       },
       {
         test: /\.(js|jsx)$/i,
