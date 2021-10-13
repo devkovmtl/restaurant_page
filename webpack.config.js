@@ -8,6 +8,7 @@ const IN_PROD = NODE_ENV === 'production'
 
 module.exports = {
   mode: IN_PROD ? 'production' : 'development',
+  target: IN_PROD ? 'browserslist' : 'web',
   entry: './src/index.js',
   devtool: NODE_ENV === 'production' ? 'source-map' : 'inline-source-map',
   devServer: {
@@ -42,7 +43,12 @@ module.exports = {
       },
       {
         test: /\.(css|sass|scss)$/i,
-        use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader'],
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(js|jsx)$/i,
