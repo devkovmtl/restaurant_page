@@ -113,4 +113,5 @@ a {
 
 .card .btn:hover {
   cursor: pointer;
+  background-color: #ff5719;
 }
