@@ -1,5 +1,5 @@
 import { createHTMLElement } from './helpers'
-import './styles/index.scss'
+import './styles/index.css'
 
 const content = document.querySelector('div#content')
 const div = createHTMLElement('div', 'leftPane', ['pane', 'left-pane'])
