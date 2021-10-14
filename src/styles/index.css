@@ -55,9 +55,62 @@ a {
 }
 
 .nav-link > a:hover {
-  color: #fff;
+  color: orangered;
 }
 
 .nav:last-child {
   padding-right: 42px;
+}
+
+.home {
+  background-image: url('../images/restaurant-arch.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.backdrop-shadow {
+  height: 100%;
+  width: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+}
+
+.card h1.restaurant-name {
+  color: #fff;
+  font-size: 72px;
+  line-height: 1.6;
+  font-family: 'Lobster', cursive;
+}
+
+.card p.content {
+  font-family: 'Raleway', sans-serif;
+  color: rgba(255, 255, 255, 0.66);
+  font-size: 24px;
+  line-height: 1.2;
+}
+
+.card .btn {
+  background-color: orangered;
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 10px 20px rgb(0 0 0 / 50%);
+  margin-top: 12px;
+  padding: 16px 24px;
+  width: 180px;
+}
+
+.card .btn:hover {
+  cursor: pointer;
 }
