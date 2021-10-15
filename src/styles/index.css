@@ -55,6 +55,7 @@ a {
 }
 
 .nav-link > a:hover {
+  cursor: pointer;
   color: orangered;
 }
 

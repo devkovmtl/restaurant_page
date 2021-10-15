@@ -6,7 +6,7 @@ const content = document.querySelector('#content')
 const createNavLink = (page) => {
   const li = createHTMLElement('li', null, ['nav-link'], null)
   const a = createHTMLElement('a', null, null, page)
-  a.setAttribute('href', page === 'home' ? '/' : `/${page}.html`)
+  // a.setAttribute('href', page === 'home' ? '/' : `/${page}.html`)
   li.appendChild(a)
   return li
 }
@@ -47,15 +47,30 @@ const createHome = () => {
   )
   card.appendChild(p)
   const a = createHTMLElement('a', null, ['btn'], 'Check our menu')
-  a.setAttribute('href', '/menu.html')
+  // a.setAttribute('href', '/menu.html')
   card.appendChild(a)
   shadow.appendChild(card)
   home.appendChild(shadow)
   return home
 }
 
-const navBar = createNavbar()
-const home = createHome()
+function home() {
+  content.innerHTML = ''
+  const navBar = createNavbar()
+  const home = createHome()
 
-content.appendChild(navBar)
-content.appendChild(home)
+  content.appendChild(navBar)
+  content.appendChild(home)
+}
+
+home()
+
+document.addEventListener('click', (e) => {
+  e.preventDefault()
+  const target = e.target.innerText
+
+  console.log(target)
+  if (target === 'home') {
+    home()
+  }
+})
