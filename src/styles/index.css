@@ -132,9 +132,10 @@ a {
   align-items: center;
 }
 
-.menu-title {
+.menu-title,
+.contact-title {
   margin-top: 36px;
-  font-size: 36px;
+  font-size: 42px;
   line-height: 1.6;
   font-family: 'Lobster', cursive;
   color: #fff;
@@ -156,7 +157,7 @@ a {
 }
 
 .card img {
-  background: url('../images/pizza.jpg');
+  background: url('../images/pizza-2.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
@@ -164,4 +165,48 @@ a {
   height: 64px;
   border-radius: 12px;
   margin-right: 12px;
+}
+
+.contact {
+  background-image: url('../images/restaurant-3.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.contact-container {
+  background-color: rgba(247, 214, 172, 0.74);
+  border-radius: 16px;
+  padding: 24px 42px;
+  margin-top: 20px;
+}
+
+.contact-container p {
+  margin: 12px 0;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.mapouter {
+  margin-top: 12px;
+}
+
+.mapouter {
+  position: relative;
+  text-align: right;
+  height: 360px;
+  width: 480px;
+}
+
+.gmap_canvas {
+  overflow: hidden;
+  background: none !important;
+  height: 360px;
+  width: 480px;
+}
+
+iframe {
+  width: 480px;
+  height: 360px;
 }

@@ -95,6 +95,51 @@ const createMenu = () => {
   return menu
 }
 
+const createContact = () => {
+  const contact = createHTMLElement('div', null, ['contact'], null)
+  const shaddow = createHTMLElement(
+    'div',
+    null,
+    ['backdrop-shadow', 'bs-menu'],
+    null
+  )
+  const h3Title = createHTMLElement('h3', null, ['contact-title'], 'Contact Us')
+  shaddow.appendChild(h3Title)
+  const contactContainer = createHTMLElement(
+    'div',
+    null,
+    ['contact-container'],
+    null
+  )
+
+  let i = createHTMLElement('i', null, ['fas', 'fas-phone'])
+  let p = createHTMLElement('p', null, null, `123 456 7890`)
+  contactContainer.appendChild(p)
+  i = createHTMLElement('i', null, ['fas', 'fas-home'])
+  p = createHTMLElement('p', null, null, `Montréal, QC H3H 1A1`)
+  contactContainer.appendChild(p)
+
+  const mapRouter = createHTMLElement('div', null, ['mapouter'], null)
+  const gmapCanvas = createHTMLElement('div', null, ['gmap_canvas'], null)
+  const iFrame = createHTMLElement('iframe', 'gmap_canvas', null, null)
+  iFrame.setAttribute(
+    'src',
+    'https://maps.google.com/maps?q=Montr%C3%A9al,%20QC%20H3H%201A1&t=&z=11&ie=UTF8&iwloc=&output=embed'
+  )
+  iFrame.setAttribute('frameborder', '0')
+  iFrame.setAttribute('scrolling', 'no')
+  iFrame.setAttribute('marginheight', '0')
+  iFrame.setAttribute('marginwidth', '0')
+  gmapCanvas.appendChild(iFrame)
+  mapRouter.appendChild(gmapCanvas)
+  contactContainer.appendChild(mapRouter)
+
+  shaddow.appendChild(contactContainer)
+  contact.appendChild(shaddow)
+
+  return contact
+}
+
 function home() {
   content.innerHTML = ''
   const navBar = createNavbar()
@@ -113,6 +158,14 @@ function menu() {
   content.appendChild(menu)
 }
 
+function contact() {
+  content.innerHTML = ''
+  const navBar = createNavbar()
+  const contact = createContact()
+  content.appendChild(navBar)
+  content.appendChild(contact)
+}
+
 home()
 
 document.addEventListener('click', (e) => {
@@ -125,5 +178,9 @@ document.addEventListener('click', (e) => {
   }
   if (target === 'menu') {
     menu()
+  }
+
+  if (target === 'contact') {
+    contact()
   }
 })
