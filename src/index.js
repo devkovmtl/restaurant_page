@@ -47,11 +47,52 @@ const createHome = () => {
   )
   card.appendChild(p)
   const a = createHTMLElement('a', null, ['btn'], 'Check our menu')
+  a.addEventListener('click', menu)
   // a.setAttribute('href', '/menu.html')
   card.appendChild(a)
   shadow.appendChild(card)
   home.appendChild(shadow)
   return home
+}
+
+const createCardMenu = (imgSrc, alt, content) => {
+  const div = createHTMLElement('div', null, ['card'], null)
+
+  const img = createHTMLElement('img', null, null, null)
+  // img.setAttribute('src', imgSrc)
+  // img.setAttribute('alt', alt)
+  div.appendChild(img)
+
+  const p = createHTMLElement('p', null, null, content)
+  div.appendChild(p)
+
+  return div
+}
+
+const createMenu = () => {
+  const menu = createHTMLElement('div', null, ['menu'], null)
+  const shaddow = createHTMLElement(
+    'div',
+    null,
+    ['backdrop-shadow', 'bs-menu'],
+    null
+  )
+  const h3Title = createHTMLElement('h3', null, ['menu-title'], 'Menu')
+  shaddow.appendChild(h3Title)
+  const menuContainer = createHTMLElement('div', null, ['menu-container'], null)
+
+  let cardMenu = createCardMenu('./images/pizza.jpg', 'Pizza', 'Pizza $12')
+  menuContainer.appendChild(cardMenu)
+
+  cardMenu = createCardMenu('./images/pizza.jpg', 'Pizza', 'Pizza $12')
+  menuContainer.appendChild(cardMenu)
+
+  cardMenu = createCardMenu('./images/pizza.jpg', 'Pizza', 'Pizza $12')
+  menuContainer.appendChild(cardMenu)
+
+  shaddow.appendChild(menuContainer)
+  menu.appendChild(shaddow)
+  return menu
 }
 
 function home() {
@@ -63,6 +104,15 @@ function home() {
   content.appendChild(home)
 }
 
+function menu() {
+  content.innerHTML = ''
+  const navBar = createNavbar()
+  const menu = createMenu()
+
+  content.appendChild(navBar)
+  content.appendChild(menu)
+}
+
 home()
 
 document.addEventListener('click', (e) => {
@@ -72,5 +122,8 @@ document.addEventListener('click', (e) => {
   console.log(target)
   if (target === 'home') {
     home()
+  }
+  if (target === 'menu') {
+    menu()
   }
 })

@@ -116,3 +116,52 @@ a {
   cursor: pointer;
   background-color: #ff5719;
 }
+
+.menu {
+  background-image: url('../images/restaurant.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+
+.bs-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.menu-title {
+  margin-top: 36px;
+  font-size: 36px;
+  line-height: 1.6;
+  font-family: 'Lobster', cursive;
+  color: #fff;
+}
+
+.menu-container {
+  background-color: rgba(247, 214, 172, 0.74);
+  border-radius: 16px;
+  padding: 24px 42px;
+  margin-top: 20px;
+  display: grid;
+  grid-template-columns: repeat(2, 270px);
+  grid-gap: 24px 8px;
+}
+
+.menu-container .card {
+  flex-direction: row;
+  align-items: center;
+}
+
+.card img {
+  background: url('../images/pizza.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  width: 64px;
+  height: 64px;
+  border-radius: 12px;
+  margin-right: 12px;
+}
