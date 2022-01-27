@@ -4,7 +4,7 @@ from The Odin Project's [curriculum](https://www.theodinproject.com/paths/full-s
 
 Simple restaurant homepage.
 
-The project can be seen: [here](https://devkovmtl.github.io/restaurant_page/)
+Project [demo](https://devkovmtl.github.io/restaurant_page/)
 
 ## Build with:
 
